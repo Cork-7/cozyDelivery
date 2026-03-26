@@ -30,13 +30,7 @@ public class OrderService {
         );
 
         Order createOrder = orderRepository.save(order);
-        return new OrderResponse(
-                createOrder.getId(),
-                createOrder.getProduct().getId(),
-                createOrder.getProduct().getName(),
-                createOrder.getProduct().getPrice(),
-                createOrder.getOrderQuantity()
-        );
+        return OrderResponse.from(createOrder);
     }
 
     // 주문 조회
@@ -44,12 +38,6 @@ public class OrderService {
     public OrderResponse getOrder(Long orderId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(()-> new IllegalArgumentException("해당 주문이 존재하지 않습니다"));
-        return new OrderResponse(
-                order.getId(),
-                order.getProduct().getId(),
-                order.getProduct().getName(),
-                order.getProduct().getPrice(),
-                order.getOrderQuantity()
-        );
+        return  OrderResponse.from(order);
     }
 }
