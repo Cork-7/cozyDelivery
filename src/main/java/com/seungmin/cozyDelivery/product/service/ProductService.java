@@ -22,8 +22,7 @@ public class ProductService {
     public ProductResponse saveProduct(ProductSaveRequest request) {
         Product product = new Product(
                 request.getProductName(),
-                request.getProductPrice(),
-                request.getProductQuantity()
+                request.getProductPrice()
         );
         Product saveProduct = productRepository.save(product);
         return ProductResponse.from(saveProduct);
@@ -37,8 +36,8 @@ public class ProductService {
 
         product.updateProduct(
                 request.getProductName(),
-                request.getProductPrice(),
-                request.getProductQuantity());
+                request.getProductPrice()
+        );
         productRepository.save(product);
 
         return ProductResponse.from(product);

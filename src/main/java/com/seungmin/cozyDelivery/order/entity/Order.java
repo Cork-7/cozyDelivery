@@ -15,14 +15,11 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int orderQuantity;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
-    public Order(Product product, int orderQuantity) {
+    public Order(Product product) {
         this.product = product;
-        this.orderQuantity = orderQuantity;
     }
 }

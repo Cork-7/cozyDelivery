@@ -8,7 +8,4 @@ import lombok.NoArgsConstructor;
 public class OrderRequest {
     private Long productId;
     private Long orderId;
-    private String productName;
-    private Integer productPrice;
-    private Integer orderQuantity;
 }

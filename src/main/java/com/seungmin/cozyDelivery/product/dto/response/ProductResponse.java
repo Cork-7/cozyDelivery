@@ -8,20 +8,17 @@ public class ProductResponse {
     private Long id;
     private String productName;
     private Integer productPrice;
-    private Integer productQuantity;
 
-    public ProductResponse(Long id, String productName, Integer productPrice, Integer productQuantity) {
+    public ProductResponse(Long id, String productName, Integer productPrice) {
         this.id = id;
         this.productName = productName;
         this.productPrice = productPrice;
-        this.productQuantity = productQuantity;
     }
 
     public static ProductResponse from(Product product) {
         return new ProductResponse(
                 product.getId(),
                 product.getName(),
-                product.getPrice(),
-                product.getQuantity());
+                product.getPrice());
     }
 }

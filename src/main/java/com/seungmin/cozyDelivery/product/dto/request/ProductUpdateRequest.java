@@ -8,5 +8,4 @@ import lombok.NoArgsConstructor;
 public class ProductUpdateRequest {
     private String productName;
     private Integer productPrice;
-    private Integer productQuantity;
 }

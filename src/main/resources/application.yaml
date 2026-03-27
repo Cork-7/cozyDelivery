@@ -16,3 +16,8 @@ spring:
   sql:
     init:
       mode: always
+
+
+  springdoc:
+    swagger-ui:
+      operationSorter: method

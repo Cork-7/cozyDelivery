@@ -4,6 +4,7 @@ import com.seungmin.cozyDelivery.product.dto.request.ProductSaveRequest;
 import com.seungmin.cozyDelivery.product.dto.request.ProductUpdateRequest;
 import com.seungmin.cozyDelivery.product.dto.response.ProductResponse;
 import com.seungmin.cozyDelivery.product.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ public class ProductController {
         private final ProductService productService;
 
         // 상품 등록
+        @Operation(summary = "상품 등록")
         @PostMapping()
         public ResponseEntity<ProductResponse> register(@RequestBody ProductSaveRequest request){
                 ProductResponse response = productService.saveProduct(request);
@@ -26,6 +28,7 @@ public class ProductController {
         }
 
         // 상품 수정
+        @Operation(summary = "상품 수정")
         @PutMapping("/{id}")
         public ResponseEntity<ProductResponse> update(@PathVariable Long id, @RequestBody ProductUpdateRequest request){
                 ProductResponse response = productService.updateProduct(id,request);
@@ -33,6 +36,7 @@ public class ProductController {
         }
 
         // 상품 단일 조회
+        @Operation(summary = "상품 단일 조회")
         @GetMapping("/{id}")
         public ResponseEntity<ProductResponse> getProduct(@PathVariable Long id){
                 ProductResponse response = productService.searchProduct(id);
@@ -40,6 +44,7 @@ public class ProductController {
         }
 
         // 상품 전제 초회
+        @Operation(summary = "상풍 전체 조회")
         @GetMapping
         public ResponseEntity<List<ProductResponse>> getAllProducts(){
                 List<ProductResponse> response = productService.searchProducts();
@@ -47,6 +52,7 @@ public class ProductController {
         }
 
         // 상품 삭제
+        @Operation(summary = "상품 삭제")
         @DeleteMapping("/{id}")
         public ResponseEntity<ProductResponse> deleteProduct(@PathVariable Long id){
                 productService.deleteProduct(id);

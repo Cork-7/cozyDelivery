@@ -25,8 +25,7 @@ public class OrderService {
                 .orElseThrow(()-> new IllegalArgumentException("해당 상품이 존재하지 않습니다"));
 
         Order order = new Order (
-                product,
-                request.getOrderQuantity()
+                product
         );
 
         Order createOrder = orderRepository.save(order);
