@@ -40,7 +40,7 @@
 
 ## 응답 화면
 <details>
-  <summary>### Product</summary>summary>
+  <summary>Product</summary>
   - 상품 등록
   <img width="1430" height="369" alt="스크린샷 2026-03-27 오후 4 18 53" src="https://github.com/user-attachments/assets/a11ad314-b102-4ab8-8af1-ed08014a5f7e" />
   <img width="1414" height="670" alt="스크린샷 2026-03-27 오후 4 19 25" src="https://github.com/user-attachments/assets/3b20e95c-dc44-4b64-aacc-ce15c3b131fb" />
@@ -57,7 +57,7 @@
 
 
 <details>
-### Order
+<summary>Order</summary>
 - 주문
 </details>
 
