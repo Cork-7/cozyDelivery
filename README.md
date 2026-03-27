@@ -39,8 +39,9 @@
 - 재고 차감의 원자성(Automic) 고려
 
 ## 응답 화면
-### Product
-- 상품 등록
+<details>
+  <summary>### Product</summary>summary>
+  - 상품 등록
   <img width="1430" height="369" alt="스크린샷 2026-03-27 오후 4 18 53" src="https://github.com/user-attachments/assets/a11ad314-b102-4ab8-8af1-ed08014a5f7e" />
   <img width="1414" height="670" alt="스크린샷 2026-03-27 오후 4 19 25" src="https://github.com/user-attachments/assets/3b20e95c-dc44-4b64-aacc-ce15c3b131fb" />
 - 상품 단일 조회
@@ -52,11 +53,13 @@
 - 상품 삭제
   <img width="1419" height="797" alt="스크린샷 2026-03-27 오후 4 22 10" src="https://github.com/user-attachments/assets/339a2c53-bc1a-449d-8f10-963b2332a037" />
   <img width="520" height="149" alt="스크린샷 2026-03-27 오후 4 22 34" src="https://github.com/user-attachments/assets/c85e3d7a-f8fe-4ec8-a67a-82b0c4d6baef" />
+</details>
 
+
+<details>
 ### Order
 - 주문
-  
-
+</details>
 
 
 
