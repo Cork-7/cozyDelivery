@@ -1,6 +1,6 @@
 package com.seungmin.cozyDelivery.domain.order.service;
 
-import com.seungmin.cozyDelivery.domain.order.dto.request.OrderCrateRequest;
+import com.seungmin.cozyDelivery.domain.order.dto.request.OrderRequest;
 import com.seungmin.cozyDelivery.domain.order.dto.response.OrderResponse;
 import com.seungmin.cozyDelivery.domain.order.entity.Orders;
 import com.seungmin.cozyDelivery.domain.order.repository.OrderRepository;
@@ -23,12 +23,15 @@ public class OrderService {
 
     // 주문
     @Transactional
-    public OrderResponse createOrder(OrderCrateRequest request) {
+    public OrderResponse createOrder(OrderRequest request) {
         Product product = productRepository.findById(request.getProductId())
                 .orElseThrow(()-> new IllegalArgumentException("해당 상품이 존재하지 않습니다"));
 
+        product.decreaseStock(request.getOrderQuantity());
+
         Orders orders = new Orders(
-                product
+                product,
+                request.getOrderQuantity()
         );
 
         Orders createOrders = orderRepository.save(orders);

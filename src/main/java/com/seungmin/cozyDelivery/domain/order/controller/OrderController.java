@@ -1,6 +1,6 @@
 package com.seungmin.cozyDelivery.domain.order.controller;
 
-import com.seungmin.cozyDelivery.domain.order.dto.request.OrderCrateRequest;
+import com.seungmin.cozyDelivery.domain.order.dto.request.OrderRequest;
 import com.seungmin.cozyDelivery.domain.order.dto.response.OrderResponse;
 import com.seungmin.cozyDelivery.domain.order.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -19,7 +19,7 @@ public class OrderController {
 
     @Operation(summary = "주문")
     @PostMapping
-    public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderCrateRequest request) {
+    public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest request) {
         OrderResponse response = orderService.createOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

@@ -21,8 +21,9 @@ public class ProductService {
     @Transactional
     public ProductResponse saveProduct(ProductSaveRequest request) {
         Product product = new Product(
-                request.getProductName(),
-                request.getProductPrice()
+                request.getName(),
+                request.getPrice(),
+                request.getStockQuantity()
         );
         Product saveProduct = productRepository.save(product);
         return ProductResponse.from(saveProduct);
@@ -35,8 +36,9 @@ public class ProductService {
                 .orElseThrow(()-> new IllegalArgumentException("해당 상품이 없습니다"));
 
         product.updateProduct(
-                request.getProductName(),
-                request.getProductPrice()
+                request.getName(),
+                request.getPrice(),
+                request.getStockQuantity()
         );
         productRepository.save(product);
 

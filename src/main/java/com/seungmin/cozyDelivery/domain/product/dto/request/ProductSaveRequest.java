@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class ProductSaveRequest {
-    private String productName;
-    private int productPrice;
+    private String name;
+    private int price;
+    private int stockQuantity;
 }

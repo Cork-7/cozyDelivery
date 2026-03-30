@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrderRequest {
     private Long productId;
-    private Long orderId;
+    private Integer orderQuantity;
 }

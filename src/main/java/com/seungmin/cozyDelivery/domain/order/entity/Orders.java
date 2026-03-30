@@ -20,7 +20,11 @@ public class Orders {
     @JoinColumn(name = "PRODUCT_ID")
     private Product product;
 
-    public Orders(Product product) {
+    @Column(name = "order_quantity")
+    private int orderQuantity;
+
+    public Orders(Product product, int orderQuantity) {
         this.product = product;
+        this.orderQuantity = orderQuantity;
     }
 }

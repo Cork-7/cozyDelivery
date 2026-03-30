@@ -9,12 +9,14 @@ public class OrderResponse {
     private Long productId;
     private String productName;
     private Integer productPrice;
+    private Integer orderQuantity;
 
-    public OrderResponse(Long orderId, Long productId, String productName, Integer productPrice) {
+    public OrderResponse(Long orderId, Long productId, String productName, Integer productPrice, Integer orderQuantity) {
         this.orderId = orderId;
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
+        this.orderQuantity = orderQuantity;
     }
 
     public static OrderResponse from(Orders orders) {
@@ -22,7 +24,8 @@ public class OrderResponse {
                 orders.getId(),
                 orders.getProduct().getId(),
                 orders.getProduct().getName(),
-                orders.getProduct().getPrice()
+                orders.getProduct().getPrice(),
+                orders.getOrderQuantity()
         );
     }
 }
