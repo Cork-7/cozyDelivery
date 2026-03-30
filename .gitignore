@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 임시 제외 ###
+src/main/java/com/seungmin/cozyDelivery/global/
