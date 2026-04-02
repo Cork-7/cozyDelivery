@@ -6,6 +6,10 @@ import com.seungmin.cozyDelivery.domain.order.entity.Orders;
 import com.seungmin.cozyDelivery.domain.order.repository.OrderRepository;
 import com.seungmin.cozyDelivery.domain.product.entity.Product;
 import com.seungmin.cozyDelivery.domain.product.repository.ProductRepository;
+import com.seungmin.cozyDelivery.global.error.ProductErrorCode;
+import com.seungmin.cozyDelivery.global.exception.OrderException;
+import com.seungmin.cozyDelivery.global.error.OrderErrorCode;
+import com.seungmin.cozyDelivery.global.exception.ProductException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,13 +29,19 @@ public class OrderService {
     @Transactional
     public OrderResponse createOrder(OrderRequest request) {
         Product product = productRepository.findById(request.getProductId())
-                .orElseThrow(()-> new IllegalArgumentException("해당 상품이 존재하지 않습니다"));
+                .orElseThrow(()-> new ProductException(ProductErrorCode.NOT_FOUND_PRODUCT));
+
+        productRepository.findByIdWithPessimisticLock(request.getProductId())
+                .orElseThrow(()-> new OrderException(OrderErrorCode.PURCHASE_NOT_AVAILABLE));
+
 
         product.decreaseStock(request.getOrderQuantity());
+        int orderPrice = product.getPrice();
 
         Orders orders = new Orders(
                 product,
-                request.getOrderQuantity()
+                request.getOrderQuantity(),
+                orderPrice
         );
 
         Orders createOrders = orderRepository.save(orders);
@@ -42,7 +52,7 @@ public class OrderService {
     @Transactional (readOnly = true)
     public OrderResponse getOrder(Long orderId) {
         Orders orders = orderRepository.findById(orderId)
-                .orElseThrow(()-> new IllegalArgumentException("해당 주문이 존재하지 않습니다"));
+                .orElseThrow(()-> new OrderException(OrderErrorCode.NOT_FOUND_ORDER));
         return  OrderResponse.from(orders);
     }
 

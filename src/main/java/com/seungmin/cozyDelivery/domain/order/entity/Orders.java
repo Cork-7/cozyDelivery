@@ -23,8 +23,12 @@ public class Orders {
     @Column(name = "order_quantity")
     private int orderQuantity;
 
-    public Orders(Product product, int orderQuantity) {
+    @Column(name = "order_price")
+    private int orderPrice;
+
+    public Orders(Product product, int orderQuantity, int orderPrice) {
         this.product = product;
         this.orderQuantity = orderQuantity;
+        this.orderPrice = orderPrice;
     }
 }

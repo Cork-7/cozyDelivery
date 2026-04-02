@@ -1,9 +1,10 @@
-package com.seungmin.cozyDelivery.global.exception;
+package com.seungmin.cozyDelivery.global.error;
 
 import org.springframework.http.HttpStatus;
 
 public interface ErrorCode {
-    String getCode();
+
     HttpStatus getHttpStatus();
+    String getCode();
     String getDefaultMessage();
 }

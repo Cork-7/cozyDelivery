@@ -5,6 +5,8 @@ import com.seungmin.cozyDelivery.domain.product.entity.Product;
 import com.seungmin.cozyDelivery.domain.product.repository.ProductRepository;
 import com.seungmin.cozyDelivery.domain.product.dto.request.ProductSaveRequest;
 import com.seungmin.cozyDelivery.domain.product.dto.response.ProductResponse;
+import com.seungmin.cozyDelivery.global.error.ProductErrorCode;
+import com.seungmin.cozyDelivery.global.exception.ProductException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +35,7 @@ public class ProductService {
     @Transactional
     public ProductResponse updateProduct(Long id, ProductUpdateRequest request) {
         Product product = productRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("해당 상품이 없습니다"));
+                .orElseThrow(()-> new ProductException(ProductErrorCode.NOT_FOUND_PRODUCT));
 
         product.updateProduct(
                 request.getName(),
@@ -49,7 +51,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public ProductResponse searchProduct(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("해당 상품이 없습니다"));
+                .orElseThrow(()-> new ProductException(ProductErrorCode.NOT_FOUND_PRODUCT));
 
         return ProductResponse.from(product);
     }
@@ -68,7 +70,7 @@ public class ProductService {
     @Transactional
     public void deleteProduct(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(()-> new IllegalArgumentException("해당 상품이 없습니다"));
+                .orElseThrow(()-> new ProductException(ProductErrorCode.NOT_FOUND_PRODUCT));
 
         productRepository.delete(product);
     }
