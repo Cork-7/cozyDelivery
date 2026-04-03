@@ -7,7 +7,7 @@
 - Database: MySQL
 - ORM: Spring Data JPA
 - IDE: IntelliJ IDEA
-- API Test: Swagger UI
+- API Test: Postman
 - DB Tool: DBeaver
 
 
@@ -41,25 +41,42 @@
 ## 응답 화면
 <details>
   <summary>Product</summary>
-  - 상품 등록
-  <img width="1430" height="369" alt="스크린샷 2026-03-27 오후 4 18 53" src="https://github.com/user-attachments/assets/a11ad314-b102-4ab8-8af1-ed08014a5f7e" />
-  <img width="1414" height="670" alt="스크린샷 2026-03-27 오후 4 19 25" src="https://github.com/user-attachments/assets/3b20e95c-dc44-4b64-aacc-ce15c3b131fb" />
-- 상품 단일 조회
-  <img width="1427" height="929" alt="스크린샷 2026-03-27 오후 4 20 11" src="https://github.com/user-attachments/assets/cb0979f8-4ece-4adf-8ce3-1c7cc22ac608" />
-- 상품 전체 조회
-  <img width="1417" height="832" alt="스크린샷 2026-03-27 오후 4 20 46" src="https://github.com/user-attachments/assets/ebc43ed2-ab32-43b0-9f9c-09f8c73ef5ea" />
-- 상품 수정
-  <img width="1418" height="460" alt="스크린샷 2026-03-27 오후 4 21 38" src="https://github.com/user-attachments/assets/ef65138c-a47a-4700-a8cf-b7e85aeae625" />
-- 상품 삭제
-  <img width="1419" height="797" alt="스크린샷 2026-03-27 오후 4 22 10" src="https://github.com/user-attachments/assets/339a2c53-bc1a-449d-8f10-963b2332a037" />
-  <img width="520" height="149" alt="스크린샷 2026-03-27 오후 4 22 34" src="https://github.com/user-attachments/assets/c85e3d7a-f8fe-4ec8-a67a-82b0c4d6baef" />
+  
+#### 상품 등록
+  <img width="822" height="550" alt="스크린샷 2026-04-03 오후 2 24 54" src="https://github.com/user-attachments/assets/e08e5a5d-b77f-45d6-bed6-8105aa778331" />
+
+#### 상품 단일 조회
+  <img width="781" height="542" alt="스크린샷 2026-04-03 오후 2 25 56" src="https://github.com/user-attachments/assets/f702c0aa-a249-4e84-8ee5-28d0676db7f6" />
+  
+#### 상품 전체 조회
+  <img width="790" height="843" alt="스크린샷 2026-04-03 오후 2 26 33" src="https://github.com/user-attachments/assets/0ed47045-7975-4313-995f-7652fe5cd6e8" />
+
+#### 상품 수정
+  <img width="775" height="536" alt="스크린샷 2026-04-03 오후 2 28 01" src="https://github.com/user-attachments/assets/24fb2951-dbf1-43d1-97db-0ada56b270fd" />
+
+#### 상품 삭제
+  <img width="726" height="450" alt="스크린샷 2026-04-03 오후 2 39 59" src="https://github.com/user-attachments/assets/063f32f6-7979-41f0-8714-997782477297" />
+  <br />
+  <img width="567" height="225" alt="스크린샷 2026-04-03 오후 2 40 59" src="https://github.com/user-attachments/assets/951887bd-83c4-4d98-9009-858dcfab1f05" />
 </details>
 
 
 <details>
 <summary>Order</summary>
-- 주문
+  
+#### 주문
+  <img width="768" height="572" alt="스크린샷 2026-04-03 오후 2 41 59" src="https://github.com/user-attachments/assets/801004c9-ed4f-43f1-8f93-13172f730ca0" />
+
+#### 주문 단일 조회
+<img width="777" height="575" alt="스크린샷 2026-04-03 오후 2 49 34" src="https://github.com/user-attachments/assets/324f6606-1810-4a14-978f-aa0ae92fa03f" />
+
+#### 주문 전제 조회 (페이징)
+<img width="1223" height="955" alt="스크린샷 2026-04-03 오후 2 50 13" src="https://github.com/user-attachments/assets/7535de69-8cf1-46dc-80d7-09b469286b2c" />
+
+#### 제품 이름으로 조회
+<img width="1206" height="956" alt="스크린샷 2026-04-03 오후 2 50 37" src="https://github.com/user-attachments/assets/50433553-c7c8-43da-8cf8-c4b802c5fb0a" />
 </details>
+
 
 
 
